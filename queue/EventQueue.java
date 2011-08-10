@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import event.AbstractEvent;
 
 /**
- * Thread-safe wrapper for Java's blocking queue
+ * Wrapper for Java's blocking queue
  * 
  * @author Anna Stępień
  * @version 09-08-2011
