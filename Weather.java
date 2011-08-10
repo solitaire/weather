@@ -5,6 +5,7 @@ import model.Model;
 
 
 /**
+ * Main part of the application
  * 
  * @author Anna Stępień
  * @version 09-08-2011
