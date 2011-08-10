@@ -31,7 +31,7 @@ public class EventQueue
 	 * 
 	 * @param event
 	 */
-	public void put(AbstractEvent event)
+	public void put(final AbstractEvent event)
 	{
 		try 
 		{
