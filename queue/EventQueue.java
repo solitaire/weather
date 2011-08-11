@@ -18,9 +18,7 @@ public class EventQueue
 	private final BlockingQueue<AbstractEvent> eventQueue;
 	
 	
-	/**
-	 * Default constructor
-	 */
+
 	public EventQueue()
 	{
 		eventQueue = new LinkedBlockingQueue<AbstractEvent>();

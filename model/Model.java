@@ -10,9 +10,6 @@ package model;
 public class Model 
 {
 	
-	/**
-	 * Default constructor
-	 */
 	public Model()
 	{
 		

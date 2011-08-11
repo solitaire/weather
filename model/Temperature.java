@@ -21,21 +21,13 @@ class Temperature
 		this.temperature = temperature;
 	}
 	
-	/**
-	 * Returns temperature
-	 * 
-	 * @return temperature
-	 */
+
 	public float getTemperature()
 	{
 		return temperature;
 	}
 	
-	/**
-	 * Sets temperature
-	 * 
-	 * @param temperature
-	 */
+
 	public void setTemperature(final float temperature)
 	{
 		this.temperature = temperature;

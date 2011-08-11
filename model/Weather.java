@@ -37,41 +37,25 @@ public class Weather
 		this.conditions = conditions;
 	}
 	
-	/**
-	 * Returns date
-	 * 
-	 * @return date
-	 */
+
 	public Date getDate()
 	{
 		return date;
 	}
 	
-	/**
-	 * Returns the highest temperature
-	 * 
-	 * @return highest temperature
-	 */
+
 	public Temperature getHighestTemperature()
 	{
 		return highestTemperature;
 	}
 	
-	/**
-	 * Returns the lowest temperature
-	 * 
-	 * @return the lowest temperature
-	 */
+
 	public Temperature getLowestTemperature()
 	{
 		return lowestTemperature;
 	}
 	
-	/**
-	 * Returns description of weather conditions
-	 * 
-	 * @return description of conditions
-	 */
+
 	public String getConditions()
 	{
 		return conditions;

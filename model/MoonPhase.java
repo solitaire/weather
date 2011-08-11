@@ -36,81 +36,48 @@ class MoonPhase
 		this.sunset = sunset;
 	}
 	
-	/**
-	 * Returns percent of illuminated part
-	 * 
-	 * @return percentIlluminated
-	 */
 	public int getPercentIlluminated()
 	{
 		return percentIlluminated;
 	}
 	
-	/**
-	 * Sets percent of illuminated part
-	 * 
-	 * @param percent of illuminated part
-	 */
+	
 	public void setPercentIlluminated(final int percentIlluminated)
 	{
 		this.percentIlluminated = percentIlluminated;
 	}
 	
-	/**
-	 * Returns age of Moon
-	 * 
-	 * @return age of Moon
-	 */
+
 	public int getAgeOfMoon()
 	{
 		return ageOfMoon;
 	}
 	
-	/**
-	 * Sets age of Moon
-	 * 
-	 * @param ageOfMoon
-	 */
+
 	public void setAgeOfMoon(final int ageOfMoon)
 	{
 		this.ageOfMoon = ageOfMoon;
 	}
 	
-	/**
-	 * Returns sunset time
-	 * 
-	 * @return sunset time
-	 */
+
 	public Date getSunset()
 	{
 		return sunset;
 	}
 	
-	/**
-	 * Sets sunset time
-	 * 
-	 * @param sunset
-	 */
+
 	public void setSunset(final Date sunset)
 	{
 		this.sunset = sunset;
 	}
 	
-	/**
-	 * Returns sunrise time
-	 * 
-	 * @return sunrise time
-	 */
+
 	public Date getSunrise()
 	{
 		return sunrise;
 	}
 	
-	/**
-	 * Sets sunrise time
-	 * 
-	 * @param sunrise
-	 */
+
 	public void setSunrise(final Date sunrise)
 	{
 		this.sunrise = sunrise;
