@@ -2,6 +2,8 @@ package model;
 
 import java.util.Date;
 
+import utils.WeatherTypes;
+
 /**
  * Represents weather condition for desired place
  * 
@@ -19,6 +21,8 @@ public class Weather
 	private final Temperature lowestTemperature;
 	/** Weather conditions */
 	private final String conditions;
+	/** Weather type */
+	private final WeatherTypes type;
 	
 	/**
 	 * Constructor
@@ -29,12 +33,13 @@ public class Weather
 	 * @param conditions
 	 */
 	public Weather(final Date date, final Temperature highestTemperature,
-			final Temperature lowestTemperature, final String conditions)
+			final Temperature lowestTemperature, final String conditions, final WeatherTypes type)
 	{
 		this.date = date;
 		this.highestTemperature = highestTemperature;
 		this.lowestTemperature = lowestTemperature;
 		this.conditions = conditions;
+		this.type = type;
 	}
 	
 
@@ -60,4 +65,9 @@ public class Weather
 	{
 		return conditions;
 	}	
+	
+	public WeatherTypes getType()
+	{
+		return type;
+	}
 }

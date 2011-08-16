@@ -14,9 +14,7 @@ public class View
 	/** Main frame of the app */
 	private final MainFrame frame;
 	
-	/**
-	 * Default constructor
-	 */
+	
 	public View()
 	{
 		frame = new MainFrame();
