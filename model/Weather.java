@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 import utils.WeatherTypes;
 
 /**
@@ -14,11 +12,11 @@ import utils.WeatherTypes;
 public class Weather 
 {
 	/** Date */
-	private final Date date;
+	private final BasicDate date;
 	/** Highest temperature */
-	private final Temperature highestTemperature;
+	private final int highestTemperature;
 	/** Lowest temperature */
-	private final Temperature lowestTemperature;
+	private final int lowestTemperature;
 	/** Weather conditions */
 	private final String conditions;
 	/** Weather type */
@@ -32,8 +30,8 @@ public class Weather
 	 * @param lowestTemperature
 	 * @param conditions
 	 */
-	public Weather(final Date date, final Temperature highestTemperature,
-			final Temperature lowestTemperature, final String conditions, final WeatherTypes type)
+	public Weather(final BasicDate date, final int highestTemperature,
+			final int lowestTemperature, final String conditions, final WeatherTypes type)
 	{
 		this.date = date;
 		this.highestTemperature = highestTemperature;
@@ -42,20 +40,20 @@ public class Weather
 		this.type = type;
 	}
 	
-
-	public Date getDate()
+	
+	public BasicDate getDate()
 	{
 		return date;
 	}
 	
 
-	public Temperature getHighestTemperature()
+	public int getHighestTemperature()
 	{
 		return highestTemperature;
 	}
 	
 
-	public Temperature getLowestTemperature()
+	public int getLowestTemperature()
 	{
 		return lowestTemperature;
 	}

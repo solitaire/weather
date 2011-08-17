@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Date;
 
 /**
  * Represents information connected with Moon phase
@@ -8,16 +7,16 @@ import java.util.Date;
  * @author Anna Stępień
  * @version 09-08-2011
  */
-class MoonPhase
+public class MoonPhase
 {
 	/** Percent of illuminated part */
 	private int percentIlluminated;
 	/** Age of Moon */
 	private int ageOfMoon;
 	/** Time of sunrise */
-	private Date sunrise;
+	private BasicTime sunrise;
 	/** Time of sunset */
-	private Date sunset;
+	private BasicTime sunset;
 	
 	/**
 	 * Constructor 
@@ -28,7 +27,7 @@ class MoonPhase
 	 * @param sunset
 	 */
 	public MoonPhase(final int percentIlluminated, final int ageOfMoon,
-			final Date sunrise, final Date sunset)
+			final BasicTime sunrise, final BasicTime sunset)
 	{
 		this.percentIlluminated = percentIlluminated;
 		this.ageOfMoon = ageOfMoon;
@@ -60,25 +59,25 @@ class MoonPhase
 	}
 	
 
-	public Date getSunset()
+	public BasicTime getSunset()
 	{
 		return sunset;
 	}
 	
 
-	public void setSunset(final Date sunset)
+	public void setSunset(final BasicTime sunset)
 	{
 		this.sunset = sunset;
 	}
 	
 
-	public Date getSunrise()
+	public BasicTime getSunrise()
 	{
 		return sunrise;
 	}
 	
 
-	public void setSunrise(final Date sunrise)
+	public void setSunrise(final BasicTime sunrise)
 	{
 		this.sunrise = sunrise;
 	}
