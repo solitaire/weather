@@ -1,6 +1,6 @@
 package request;
 
-abstract class AbstractResponse 
+public abstract class AbstractResponse 
 {
 
 }
