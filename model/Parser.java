@@ -21,12 +21,15 @@ import utils.WeatherTypes;
 public class Parser
 {
    
-   private final XMLResponse response;
-   private final Element root;
+   private Element root;
    
-   public Parser(final XMLResponse response)
+   public Parser()
    {
-       this.response = response;
+
+   }
+   
+   public void parse(final XMLResponse response)
+   {
        this.root = response.getXmlResponse().getDocumentElement();
    }
    

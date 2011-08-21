@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import request.XMLResponse;
+
 /**
  * Model of the application
  * 
@@ -11,17 +13,18 @@ import java.util.ArrayList;
  */
 public class Model 
 {
+	private final Parser parser;
 	private ArrayList<Weather> weatherList;
 	private MoonPhase moonPhase;
 	
-	public void setWeather(final ArrayList<Weather> weatherList)
+	public Model()
 	{
-		this.weatherList = weatherList;
+		this.parser = new Parser();
 	}
 	
-	public void setMoonPhase(final MoonPhase moonPhase)
+	public void parse(final XMLResponse response)
 	{
-		this.moonPhase = moonPhase;
+		parser.parse(response);
 	}
 	
 	public final ArrayList<Weather> getWeather()

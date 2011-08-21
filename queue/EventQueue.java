@@ -28,35 +28,26 @@ public class EventQueue
 	 * Puts an event into the event queue
 	 * 
 	 * @param event
+	 * @throws InterruptedException 
 	 */
-	public void put(final AbstractEvent event)
+	public void put(final AbstractEvent event) throws InterruptedException
 	{
-		try 
-		{
-			eventQueue.put(event);
-		} 
-		catch (InterruptedException e) 
-		{
-			e.printStackTrace();
-		}
+
+		eventQueue.put(event);
+
 	}
 	
 	/**
 	 * Takes an event from the event queue
 	 * 
 	 * @return AbstracEvent object
+	 * @throws InterruptedException 
 	 */
-	public AbstractEvent take()
+	public AbstractEvent take() throws InterruptedException
 	{
-		AbstractEvent event = null;
-		try 
-		{
-			event = eventQueue.take();
-		} 
-		catch (InterruptedException e) 
-		{
-			e.printStackTrace();
-		}
+
+		AbstractEvent event = eventQueue.take();
+
 		return event;
 	}
 	

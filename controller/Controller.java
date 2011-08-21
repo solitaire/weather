@@ -1,7 +1,19 @@
 package controller;
 
+import java.net.MalformedURLException;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
+
 import event.AbstractEvent;
+import event.CloseButtonClickedEvent;
+import event.NewRequestEvent;
 import queue.EventQueue;
+import request.HttpRequest;
+import request.WeatherURL;
+import request.XMLResponse;
 import view.View;
 import model.Model;
 
@@ -19,6 +31,8 @@ public class Controller
 	private final View view;
 	/** Event queue */
 	private final EventQueue eventQueue;
+	/** Action-event map */
+	private final HashMap<Class<? extends AbstractEvent>, AbstractAction> actionMap;
 	
 	/**
 	 * Creates new Controller object
@@ -32,6 +46,8 @@ public class Controller
 		this.model = model;
 		this.view = view;
 		this.eventQueue = eventQueue;
+		this.actionMap = new HashMap<Class<? extends AbstractEvent>, AbstractAction>();
+		createActionMap();
 	}
 
 	
@@ -40,6 +56,95 @@ public class Controller
 	 */
 	public void dispatch() 
 	{
+		while(true)
+		{
+			final AbstractEvent event;
+			try
+			{
+				event = eventQueue.take();
+				actionMap.get(event.getClass()).execute(event);
+			}
+			catch(final InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	private void createActionMap()
+	{
+		actionMap.put(NewRequestEvent.class, new MakeRequestAction());
+		actionMap.put(CloseButtonClickedEvent.class, new CloseAppAction());
+	}
+	
+	
+	private class MakeRequestAction extends AbstractAction
+	{
+
+		private SwingWorker<XMLResponse, Void> worker;
+
+		@Override
+		public void execute(AbstractEvent event) 
+		{
+			final String query = ((NewRequestEvent) event).getQuery();
+			
+			final WeatherURL url = new WeatherURL(query);
+			
+			worker = new SwingWorker<XMLResponse, Void>()
+			{
+
+				@Override
+				protected XMLResponse doInBackground() throws Exception 
+				{
+					HttpRequest request = null;
+					try 
+					{
+						request = new HttpRequest(url.getURL());
+					} 
+					catch (final MalformedURLException e) 
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return (XMLResponse) request.getResponse();
+				}
+				
+				@Override
+				protected void done()
+				{
+					try 
+					{
+						XMLResponse response = get();
+						model.parse(response);
+						//update view
+					} 
+					catch (InterruptedException e) 
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ExecutionException e) 
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				
+			};
+			worker.execute();
+		}
+		
+	}
+	
+	private class CloseAppAction extends AbstractAction
+	{
+
+		@Override
+		public void execute(AbstractEvent event) 
+		{
+			System.exit(0);
+		}
 		
 	}
 

@@ -10,7 +10,7 @@ import java.net.URL;
  * @version 10-08-2011
  *
  */
-class WeatherURL 
+public class WeatherURL 
 {
 	private final static String BASE = "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=";
 	private final String query;
