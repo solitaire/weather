@@ -4,18 +4,18 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
-import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
-import event.AbstractEvent;
-import event.CloseButtonClickedEvent;
-import event.NewRequestEvent;
+import model.Model;
+import model.Weather;
 import queue.EventQueue;
 import request.HttpRequest;
 import request.WeatherURL;
 import request.XMLResponse;
 import view.View;
-import model.Model;
+import event.AbstractEvent;
+import event.CloseButtonClickedEvent;
+import event.NewRequestEvent;
 
 /**
  * Controller of the application
@@ -117,7 +117,7 @@ public class Controller
 					{
 						XMLResponse response = get();
 						model.parse(response);
-						//update view
+						view.updateView(model);
 					} 
 					catch (InterruptedException e) 
 					{

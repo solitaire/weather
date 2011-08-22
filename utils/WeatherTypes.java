@@ -16,7 +16,7 @@ public enum WeatherTypes
 	CHANCESNOW,
 	
 	/** Chance of Thunderstorms */
-	CHANCESTORMS,
+	CHANCETSTORMS,
 	
 	/** Clear */
 	CLEAR,

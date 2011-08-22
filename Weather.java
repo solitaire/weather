@@ -13,9 +13,9 @@ public class Weather
 {
 	public static void main(String args[])
 	{
-		final Model model = new Model();
-		final View view = new View();
 		final EventQueue eventQueue = new EventQueue();
+		final Model model = new Model();
+		final View view = new View(eventQueue);
 		final Controller controller = new Controller(model, view, eventQueue);
 		
 		view.display();

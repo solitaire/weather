@@ -25,6 +25,8 @@ public class Model
 	public void parse(final XMLResponse response)
 	{
 		parser.parse(response);
+		weatherList = parser.getWeatherList();
+		moonPhase = parser.getMoonPhase();
 	}
 	
 	public final ArrayList<Weather> getWeather()
