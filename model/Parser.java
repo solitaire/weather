@@ -33,6 +33,26 @@ public class Parser
        this.root = response.getXmlResponse().getDocumentElement();
    }
    
+   public TodayWeather getTodayWeather()
+   {
+	   
+	   Element node = (Element) root.getElementsByTagName("txt_forecast").item(0);
+	   
+	   NodeList list = node.getElementsByTagName("forecastday");
+
+	   Element today = (Element) list.item(0);
+	   Element tonight = (Element) list.item(1);
+		   
+	   String weatherTypeToday = getTextValue(today, "icon").toUpperCase();
+	   String titleToday = getTextValue(today, "title");
+	   String conditionsToday = getTextValue(today, "fcttext");
+	   String weatherTypeTonight = getTextValue(tonight, "icon").toUpperCase();
+	   String titleTonight = getTextValue(tonight, "title");
+	   String conditionsTonight = getTextValue(tonight, "fcttext");
+	   
+	   return new TodayWeather(titleToday, conditionsToday, WeatherTypes.valueOf(weatherTypeToday), titleTonight, conditionsTonight, WeatherTypes.valueOf(weatherTypeTonight));
+   }
+   
    public ArrayList<Weather> getWeatherList()
    {
 	   ArrayList<Weather> weatherList = new ArrayList<Weather>();
@@ -108,5 +128,6 @@ public class Parser
    {
 	   return Integer.parseInt(getTextValue(el, name));
    }
+
    
 }

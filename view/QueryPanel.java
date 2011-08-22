@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,9 +21,10 @@ class QueryPanel extends JPanel
 	
 	public QueryPanel(final EventQueue eventQueue)
 	{
+		setPreferredSize(new Dimension(1024, 60));
 		queryButton = new JButton("Check!");
 		closeButton = new JButton("Close");
-		queryField = new JTextField("Warszawa");
+		queryField = new JTextField(40);
 		
 		add(queryField);
 		add(queryButton);

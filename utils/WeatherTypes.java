@@ -61,6 +61,10 @@ public enum WeatherTypes
 	TSTORMS,
 	
 	/** Unknown */
-	UNKNOWN
+	UNKNOWN, 
+	
+	NT_RAIN, 
+	
+	NT_PARTLYCLOUDY
 
 }

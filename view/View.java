@@ -1,18 +1,8 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import model.Model;
-
-import event.NewRequestEvent;
-
 import queue.EventQueue;
 
 /**
@@ -24,7 +14,6 @@ import queue.EventQueue;
  */
 public class View 
 {
-	/** Main frame of the app */
 	private final MainFrame frame;
 	private final MainPanel panel;
 	private final EventQueue eventQueue;

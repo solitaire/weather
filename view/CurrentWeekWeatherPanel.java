@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
@@ -14,13 +15,15 @@ class CurrentWeekWeatherPanel extends JPanel
 	public CurrentWeekWeatherPanel()
 	{
 		setLayout(new GridLayout(0, 6));
+		setPreferredSize(new Dimension(1024, 200));
 	}
 	
 	public void update(final Model model)
 	{
-		for (Weather weather : model.getWeather()) 
+		removeAll();
+		for (Weather weather : model.getWeekWeather()) 
 		{
-			add(new CurrentWeatherPanel(weather));
+			add(new ForecastDayPanel(weather));
 			revalidate();
 			validate();
 		}

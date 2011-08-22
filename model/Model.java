@@ -14,8 +14,9 @@ import request.XMLResponse;
 public class Model 
 {
 	private final Parser parser;
+	private TodayWeather todayWeather;
 	private ArrayList<Weather> weatherList;
-	private MoonPhase moonPhase;
+	private  MoonPhase moonPhase;
 	
 	public Model()
 	{
@@ -27,9 +28,15 @@ public class Model
 		parser.parse(response);
 		weatherList = parser.getWeatherList();
 		moonPhase = parser.getMoonPhase();
+		todayWeather = parser.getTodayWeather();
 	}
 	
-	public final ArrayList<Weather> getWeather()
+	public final TodayWeather getTodayWeather()
+	{
+		return todayWeather;
+	}
+	
+	public final ArrayList<Weather> getWeekWeather()
 	{
 		return weatherList;
 	}
