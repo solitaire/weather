@@ -18,6 +18,10 @@ class ViewConfig
 	
 	public final static int WIDTH = 1024;
 	public final static int HEIGHT= 480;
+	public static final int TODAY_WEATHER_PANEL_HEIGHT = 240;
+	public static final int QUERY_PANEL_HEIGHT = 60;
+	public static final int TEXT_FIELD_WIDTH = 40;
+	public static final int CURRENT_WEEK_PANEL_HEIGHT = 200;
 	
 	private static ViewConfig instance;
 	

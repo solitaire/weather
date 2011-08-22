@@ -21,10 +21,10 @@ class QueryPanel extends JPanel
 	
 	public QueryPanel(final EventQueue eventQueue)
 	{
-		setPreferredSize(new Dimension(1024, 60));
+		setPreferredSize(new Dimension(ViewConfig.WIDTH, ViewConfig.QUERY_PANEL_HEIGHT));
 		queryButton = new JButton("Check!");
 		closeButton = new JButton("Close");
-		queryField = new JTextField(40);
+		queryField = new JTextField(ViewConfig.TEXT_FIELD_WIDTH);
 		
 		add(queryField);
 		add(queryButton);

@@ -17,15 +17,13 @@ import queue.EventQueue;
  * @version 2011-08-22
  */
 class MainPanel extends JPanel 
-{
-	private final EventQueue eventQueue; 
+{ 
 	private final QueryPanel queryPanel;
 	private final TodayWeatherPanel todayWeatherPanel;
 	private final CurrentWeekWeatherPanel currentWeekWeatherPanel;
 	
 	public MainPanel(final EventQueue eventQueue)
 	{
-		this.eventQueue = eventQueue;
 		setPreferredSize(new Dimension(ViewConfig.WIDTH, ViewConfig.HEIGHT));			
 		setLayout(new BorderLayout(20, 0));
 		

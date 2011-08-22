@@ -15,7 +15,7 @@ class CurrentWeekWeatherPanel extends JPanel
 	public CurrentWeekWeatherPanel()
 	{
 		setLayout(new GridLayout(0, 6));
-		setPreferredSize(new Dimension(1024, 200));
+		setPreferredSize(new Dimension(ViewConfig.WIDTH, ViewConfig.CURRENT_WEEK_PANEL_HEIGHT));
 	}
 	
 	public void update(final Model model)

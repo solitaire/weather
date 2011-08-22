@@ -27,7 +27,7 @@ class TodayWeatherPanel extends JPanel
 		tonightPanel = new CurrentWeather();
 		
 		setLayout(new GridLayout(0, 3));
-		setPreferredSize(new Dimension(1024, 240));
+		setPreferredSize(new Dimension(ViewConfig.WIDTH, ViewConfig.TODAY_WEATHER_PANEL_HEIGHT));
 		add(todayPanel);
 		add(tonightPanel);
 		add(moonPhasePanel);
