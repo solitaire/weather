@@ -28,17 +28,13 @@ class TodayWeatherPanel extends JPanel
 		
 		setLayout(new GridLayout(0, 3));
 		setPreferredSize(new Dimension(1024, 240));
-		//add(todayPanel);
-		//add(tonightPanel);
-		//add(moonPhasePanel);
+		add(todayPanel);
+		add(tonightPanel);
+		add(moonPhasePanel);
 	}
 	
 	public void update(final Model model)
 	{
-		add(todayPanel);
-		add(tonightPanel);
-		add(moonPhasePanel);
-
 		todayPanel.setTitle(model.getTodayWeather().getTitleToday());
 		todayPanel.setIcon(model.getTodayWeather().getWeatherTypeToday());
 		todayPanel.setConditions(model.getTodayWeather().getConditionsToday());
