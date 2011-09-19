@@ -70,6 +70,8 @@ class ViewConfig
 		imagesMap.put(WeatherTypes.UNKNOWN, "na.png");
 		imagesMap.put(WeatherTypes.NT_RAIN, "na.png");
 		imagesMap.put(WeatherTypes.NT_PARTLYCLOUDY, "na.png");
+		imagesMap.put(WeatherTypes.NT_SUNNY, "na.png");
+		imagesMap.put(WeatherTypes.NT_CLOUDY, "na.png");
 	}
 
 }

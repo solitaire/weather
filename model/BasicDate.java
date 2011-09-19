@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  */
 public class BasicDate 
 {
-	private final static String[] DAYS = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+	private final static String[] DAYS = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	private final static String[] MONTHS = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
 											"October", "November", "December"};
 	

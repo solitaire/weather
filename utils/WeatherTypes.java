@@ -65,6 +65,10 @@ public enum WeatherTypes
 	
 	NT_RAIN, 
 	
-	NT_PARTLYCLOUDY
+	NT_PARTLYCLOUDY,
+	
+	NT_SUNNY, 
+	
+	NT_CLOUDY
 
 }

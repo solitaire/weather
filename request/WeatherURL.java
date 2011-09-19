@@ -1,7 +1,13 @@
 package request;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URI;
+import java.net.URLEncoder;
+
+import javax.print.URIException;
 
 /**
  * Represents weather feed url for specified place
@@ -12,7 +18,8 @@ import java.net.URL;
  */
 public class WeatherURL 
 {
-	private final static String BASE = "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=";
+	private final static String HOST = "api.wunderground.com";
+	private final static String PATH = "/auto/wui/geo/ForecastXML/index.xml";
 	private final String query;
 	
 	public WeatherURL(final String query)
@@ -25,10 +32,13 @@ public class WeatherURL
 	 * 
 	 * @return query url
 	 * @throws MalformedURLException
+	 * @throws URISyntaxException 
+	 * @throws UnsupportedEncodingException 
 	 */
-	public URL getURL() throws MalformedURLException
+	public URL getURL() throws MalformedURLException, URISyntaxException, UnsupportedEncodingException
 	{
-		return new URL(BASE + query);
+		URI uri = new URI("http", HOST, PATH, "query="+query, null);
+		return new URL(uri.toASCIIString().replace("%20", "%25"));
 	}
 
 }

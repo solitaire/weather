@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -106,6 +107,10 @@ public class Controller
 					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					}
+					catch (final URISyntaxException e1)
+					{
+						e1.printStackTrace();
 					}
 					return (XMLResponse) request.getResponse();
 				}
